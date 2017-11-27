@@ -1,6 +1,7 @@
 #include <stdio.h>
 #define SIZE 1024
 
+/*The identifier global asks compiler to use device instead of host*/
 __global__ void VectorAdd(int*a, int*b, int*c, int n)
 {
 	int i = threadIdx.x;
@@ -10,6 +11,8 @@ __global__ void VectorAdd(int*a, int*b, int*c, int n)
 		c[i] = a[i] + b[i];
 	}
 }
+
+
 
 int main()
 {
